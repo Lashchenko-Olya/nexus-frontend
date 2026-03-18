@@ -1,0 +1,391 @@
+/* =========================================
+   ОБГОРТКА (OVERLAY)
+========================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  /* Короткий запис замість top: 0; left: 0; width: 100vw; height: 100vh; */
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  /* Щоб на малих екранах не прилипало до країв */
+}
+
+/* =========================================
+   ГОЛОВНИЙ КОНТЕЙНЕР
+========================================= */
+.modal-content.large-modal {
+  background-image: linear-gradient(to bottom right, rgba(36, 42, 52, 0.98), rgba(9, 9, 11, 0.98));
+  backdrop-filter: blur(16px);
+  width: 100%;
+  max-width: 520px;
+  /* 🔥 Повернули твою компактну ширину */
+  max-height: 90vh;
+  border-radius: 12px;
+  border: 1px solid #27272a;
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Скролбар */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 10px;
+}
+
+/* =========================================
+   ШАПКА
+========================================= */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 15px;
+}
+
+.modal-header h2 {
+  color: #f4f4f5;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.close-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* =========================================
+   ФОРМА ТА СІТКА (GRID)
+========================================= */
+.add-game-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Робимо інпути у 2 колонки */
+/* Робимо інпути у 1 колонку (одне поле в ширину) */
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #a1a1aa;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================================
+   ІНПУТИ ТА TEXTAREA
+========================================= */
+.form-group input,
+.form-group textarea {
+  background: #050508;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #e4e4e7;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+  /* Дозволяє тягнути textarea тільки вниз */
+}
+
+/* Фокус і Неон */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #FF003C;
+  box-shadow: 0 0 0 2px rgba(255, 0, 60, 0.15);
+}
+
+/* Стиль Placeholder + Анімація зникнення */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #77879C;
+  transition: opacity 0.3s ease;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity: 0;
+}
+
+/* Поля для файлів (Картинки) */
+.form-group input[type="file"] {
+  padding: 9px 14px;
+  color: #77879C;
+  cursor: pointer;
+}
+
+/* =========================================
+   ТАБЛЕТКИ ЖАНРІВ (MULTI-SELECT)
+========================================= */
+.genre-pills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 140px;
+  overflow-y: auto;
+  padding: 12px;
+  background: #050508;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+}
+
+.genre-pills-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.genre-pills-container::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 10px;
+}
+
+.genre-pill {
+  padding: 6px 14px;
+  background: #18181b;
+  color: #a1a1aa;
+  border: 1px solid #3f3f46;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.genre-pill:hover {
+  background: #27272a;
+  color: white;
+}
+
+/* Активний жанр */
+.genre-pill.active {
+  background: rgba(255, 0, 60, 0.15);
+  color: #FF003C;
+  border-color: #FF003C;
+  box-shadow: 0 0 8px rgba(255, 0, 60, 0.4);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #3f3f46;
+  color: #e4e4e7;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #27272a;
+  border-color: #a1a1aa;
+}
+
+/* Головна неонова кнопка */
+.add-game-btn.neon-btn {
+  background: linear-gradient(90deg, #FF003C 0%, #FF2E63 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.4);
+  transition: 0.3s ease;
+}
+
+.add-game-btn.neon-btn:hover:not(:disabled) {
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Якщо не обрано жодного жанру (кнопка заблокована) */
+.add-game-btn.neon-btn:disabled {
+  background: #27272a;
+  box-shadow: none;
+  color: #71717a;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================================= ЗОНИ ЗАВАНТАЖЕННЯ ФОТО ========================================= */
+.media-upload-section {
+  margin-top: 20px;
+}
+
+.media-title {
+  color: #e4e4e7;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* 🔥 РОБИМО ЇХ В ОДИН РЯД 🔥 */
+.media-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.upload-block {
+  flex: 1;
+  /* Кожен блок забирає половину ширини */
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-label {
+  color: #a1a1aa;
+  font-size: 13px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* 🔥 НАШІ КРУТІ ПРЯМОКУТНИКИ DROPZONE 🔥 */
+.dropzone-box {
+  flex: 1;
+  /* Обгортка розтягується по висоті */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #050508;
+  border: 1px dashed #3f3f46;
+  border-radius: 10px;
+  padding: 30px;
+  /* Збільшили padding для більшого прямокутника */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.dropzone-box:hover {
+  border-color: #ef4444;
+  /* Неонове підсвічування при наведенні */
+  background: rgba(239, 68, 68, 0.05);
+  /* Легкий неоновий фон при наведенні */
+}
+
+/* Коли файл вже вибрано */
+.dropzone-box.file-selected {
+  border-color: #ef4444;
+  border-style: solid;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.placeholder-text {
+  color: #71717a;
+  font-size: 13px;
+  margin-top: 12px;
+  max-width: 100%;
+  word-wrap: break-word;
+  /* Щоб довгі імена файлів не ламали розмітку */
+}
+
+/* 🔥 КАСОТМНИЙ ВИПАДАЮЧИЙ СПИСОК 🔥 */
+.custom-select-header {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #09090b;
+  color: #f4f4f5;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.2s;
+}
+
+.custom-select-header:hover {
+  border-color: #8b5cf6;
+}
+
+.custom-select-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 5px;
+  background-color: #18181b;
+  /* Темний фон списку */
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.custom-select-option {
+  padding: 12px 15px;
+  color: #f4f4f5;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.2s;
+}
+
+/* 🔥 Твій власний колір при наведенні замість системного синього! */
+.custom-select-option:hover {
+  background-color: #27272a;
+  /* Приємний темно-сірий */
+  color: #8b5cf6;
+  /* Можна зробити текст фіолетовим для акценту */
+}
+
+.dropzone-box.dragging {
+  border-color: #ef4444;
+  /* Колір нексису (фіолетовий) або зміни на свій */
+  background-color: rgba(239, 68, 68, 0.1);
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}

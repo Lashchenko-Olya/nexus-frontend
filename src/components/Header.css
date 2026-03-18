@@ -1,0 +1,223 @@
+.header-outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  cursor: pointer;
+  color: white;
+}
+
+.logo span {
+  color: #8b5cf6;
+}
+
+.search-bar {
+  background: rgba(22, 22, 30, 0.7);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  width: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  width: 100%;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-profile {
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.user-avatar-small {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #27272a;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.user-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ефект при наведенні на профіль */
+.user-profile:hover .user-avatar-small {
+  border-color: #8b5cf6;
+  transform: scale(1.05);
+}
+
+.user-profile:hover .user-name {
+  color: #c4b5fd;
+}
+
+/* 🔥 СТИЛІ ДЛЯ ВИПАДАЮЧОГО СПИСКУ ПОШУКУ 🔥 */
+.search-dropdown {
+  position: absolute;
+  top: 120%;
+  /* Одразу під полем пошуку */
+  left: 0;
+  width: 100%;
+  background: #18181b;
+  /* Темний колір фону */
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1000;
+  /* Щоб перекривало всі банери та ігри знизу */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+}
+
+.search-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.search-dropdown-item:hover {
+  background: rgba(139, 92, 246, 0.15);
+  /* Легкий фіолетовий hover */
+}
+
+.search-dropdown-img {
+  width: 36px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.search-dropdown-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.search-dropdown-title {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.search-dropdown-year {
+  color: #a1a1aa;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.search-dropdown-empty {
+  padding: 16px;
+  text-align: center;
+  color: #a1a1aa;
+  font-size: 14px;
+}
+
+/* --- КНОПКИ ВХОДУ ТА РЕЄСТРАЦІЇ --- */
+.btn-login,
+.btn-register {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Кнопка Входу (Прозора з білим текстом) */
+.btn-login {
+  color: white;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-login:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* Кнопка Реєстрації (Фіолетова) */
+.btn-register {
+  color: white;
+  background: #8b5cf6;
+  /* Фіолетовий колір Nexus */
+  border: 1px solid #8b5cf6;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-register:hover {
+  background: #7c3aed;
+  /* Трохи темніший фіолетовий при наведенні */
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+  /* Легке підстрибування */
+}

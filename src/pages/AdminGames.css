@@ -1,0 +1,131 @@
+/* --- СТИЛІ БІБЛІОТЕКИ ІГОР --- */
+
+.games-library-panel {
+  background: #121216;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.library-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* НЕОНОВА КНОПКА "ДОДАТИ ГРУ" */
+.add-game-btn {
+  background: linear-gradient(90deg, #FF003C 0%, #FF2E63 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+  /* Неон */
+  transition: 0.3s ease;
+}
+
+.add-game-btn:hover {
+  box-shadow: 0 0 35px rgba(255, 0, 60, 0.7);
+  transform: scale(1.02);
+}
+
+/* ТАБЛИЦЯ ІГОР */
+.games-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.games-table th {
+  color: #a1a1aa;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 15px 10px;
+  /* 🔥 Додали горизонтальні відступи */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.games-table td {
+  padding: 15px 10px;
+  /* 🔥 Вирівняли з шапкою таблиці */
+  font-size: 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  /* Легка лінія розділення рядків */
+}
+
+.game-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 600;
+}
+
+.game-img-placeholder {
+  width: 45px;
+  height: 55px;
+  background: #1c1c21;
+  border-radius: 6px;
+  flex-shrink: 0;
+  /* 🔥 Щоб постер ніколи не сплющувався */
+}
+
+.genre-cell {
+  color: #a1a1aa;
+  font-size: 12px;
+  max-width: 250px;
+  line-height: 1.4;
+}
+
+/* 🔥 ІДЕАЛЬНЕ ВИРІВНЮВАННЯ ДЛЯ КОЛОНКИ "ДІЇ" 🔥 */
+.games-table th:last-child,
+.games-table td.actions-cell {
+  text-align: center;
+  /* Центруємо і заголовок, і кнопки */
+  width: 120px;
+  /* Фіксуємо ширину, щоб вони не розповзалися */
+}
+
+.actions-cell {
+  white-space: nowrap;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #71717a;
+  transition: 0.3s;
+  padding: 8px;
+  margin: 0 4px;
+  /* Однаковий відступ з обох боків */
+  border-radius: 6px;
+  vertical-align: middle;
+  /* Вирівнюємо по вертикалі */
+}
+
+.edit-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.delete-btn.neon-icon:hover {
+  color: #FF003C;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 60, 0.8));
+  background: rgba(255, 0, 60, 0.1);
+}

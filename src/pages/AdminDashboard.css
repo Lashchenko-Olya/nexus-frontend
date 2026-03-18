@@ -1,0 +1,201 @@
+/* ==========================================
+   ADMIN DASHBOARD STYLES (Nexus Project)
+   ========================================== */
+
+.admin-dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #020204;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- БОКОВА ПАНЕЛЬ --- */
+.admin-sidebar {
+  width: 260px;
+  background-color: #09090b;
+  border-right: 1px solid rgba(255, 0, 60, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+}
+
+.admin-logo-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.admin-badge {
+  background: #FF003C;
+  box-shadow: 0 0 12px rgba(255, 0, 60, 0.6);
+}
+
+.admin-nav {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-item.active {
+  background: linear-gradient(90deg, #FF003C 0%, #FF2E63 100%);
+  color: white;
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+}
+
+.nav-item:hover:not(.active) {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.admin-logout-section {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #71717a;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+  /* Заокруглюємо кути */
+  transition: 0.2s;
+}
+
+.admin-logout-section:hover {
+  color: #ef4444;
+  /* Робимо червоною при наведенні */
+  background: rgba(239, 68, 68, 0.1);
+  /* Легкий червоний фон */
+}
+
+/* --- ОСНОВНИЙ КОНТЕНТ --- */
+.admin-main-content {
+  margin-left: 260px;
+  /* Відступ під ширину сайдбару */
+  flex-grow: 1;
+  padding: 30px 50px;
+}
+
+.admin-top-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* КАРТКИ СТАТИСТИКИ */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 80px;
+}
+
+.stat-card {
+  background: #121216;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 0, 60, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #FF003C;
+  box-shadow: 0 0 30px rgba(255, 0, 60, 0.2);
+}
+
+.stat-info p {
+  color: #a1a1aa;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.stat-info h3 {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.stat-positive {
+  color: #FF003C;
+  text-shadow: 0 0 8px rgba(255, 0, 60, 0.4);
+}
+
+.stat-icon-red {
+  color: #FF003C;
+  /* Використовуємо drop-shadow для складних форм іконок */
+  filter: drop-shadow(0 0 12px rgba(255, 0, 60, 0.8));
+}
+
+/* ГРІД ДЛЯ СПИСКІВ */
+.dashboard-lists-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.dashboard-list-panel {
+  background: #121216;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.dashboard-list-panel h4 {
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.list-entry {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.list-entry:last-child {
+  border-bottom: none;
+}
+
+.entry-img-placeholder,
+.entry-avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  background: #1c1c21;
+  border-radius: 8px;
+}
+
+.entry-avatar-placeholder {
+  border-radius: 50%;
+}
+
+.entry-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.entry-time {
+  font-size: 12px;
+  color: #71717a;
+}

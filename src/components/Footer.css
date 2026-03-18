@@ -1,0 +1,66 @@
+.nx-footer {
+  background-color: #09090b;
+  /* Темний фон під колір сторінки */
+  border-top: 1px solid #1f1f22;
+  /* Ледь помітна лінія відділення зверху */
+  padding: 60px 20px;
+  width: 100%;
+  margin-top: auto;
+  /* Гарантує, що футер завжди буде притиснутий до низу екрана */
+}
+
+.nx-footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  /* Відступ між описом та іконками */
+}
+
+.nx-footer-brand h2 {
+  color: #f4f4f5;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.nx-footer-brand h2 span {
+  color: #8b5cf6;
+  /* Фірмовий фіолетовий колір для "x" */
+}
+
+.nx-footer-brand p {
+  color: #71717a;
+  /* Сірий колір для тексту */
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 320px;
+  /* Обмежуємо ширину, щоб текст переносився як на макеті */
+  margin: 0;
+}
+
+.nx-footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  /* Відстань між соціальними мережами */
+}
+
+.nx-social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f4f4f5;
+  /* Білий колір тексту та іконок */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.nx-social-link:hover {
+  color: #8b5cf6;
+  /* Підсвічування при наведенні мишки */
+}

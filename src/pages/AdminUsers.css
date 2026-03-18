@@ -1,0 +1,106 @@
+/* --- СТИЛІ КЕРУВАННЯ КОРИСТУВАЧАМИ --- */
+
+.admin-page-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.users-list-panel {
+  background: #121216;
+  border-radius: 15px;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* МИЛИЦЯ ДЛЯ ПОШУКУ (ЗАВЖДИ ЧОРНИЙ) */
+.users-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.users-search-bar input {
+  background: transparent !important;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* ТАБЛИЦЯ КОРИСТУВАЧІВ */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.users-table th {
+  color: #FF003C; /* Червоні заголовки за макетом */
+  font-size: 13px;
+  font-weight: 600;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 0, 60, 0.2);
+}
+
+.users-table td {
+  padding: 20px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  background: #1c1c21;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* СТАТУСИ ТА НЕОН */
+.status-badge {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.status-active {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.3);
+  background: rgba(74, 222, 128, 0.05);
+}
+
+.status-blocked {
+  color: #FF003C;
+  border-color: rgba(255, 0, 60, 0.4);
+  background: rgba(255, 0, 60, 0.05);
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.2); /* Неон */
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #71717a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  color: #FF003C;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 60, 0.8)); /* Неонова іконка */
+}

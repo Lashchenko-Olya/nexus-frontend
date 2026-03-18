@@ -1,0 +1,107 @@
+/* ОБГОРТКА */
+.notfound-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #050508; /* Глибокий чорний фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* СІТКА НА ФОНІ */
+.bg-grid {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+/* НЕОНОВІ ПЛЯМИ */
+.glow-red {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(255, 0, 60, 0.3) 0%, transparent 60%);
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.glow-purple {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.25) 0%, transparent 60%);
+  filter: blur(100px);
+  z-index: 1;
+}
+
+/* КОНТЕНТ */
+.notfound-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+/* ГЛІТЧ ЕФЕКТ ДЛЯ ТЕКСТУ */
+.glitch-title {
+  font-size: 160px;
+  font-weight: 900;
+  color: white;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 5px;
+  /* Ефект зсуву кольорів (червоний вліво, блакитний вправо) */
+  text-shadow: -5px 0px #FF003C, 5px 0px #00FFFF;
+}
+
+.glitch-subtitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: -2px 0px #FF003C, 2px 0px #00FFFF;
+}
+
+/* ОПИС */
+.notfound-text {
+  color: #a1a1aa;
+  font-size: 14px;
+  max-width: 500px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ФІОЛЕТОВА КНОПКА */
+.home-btn {
+  background: linear-gradient(90deg, #9b66ff 0%, #6a35ff 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(106, 53, 255, 0.5); /* Фіолетовий неон */
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(106, 53, 255, 0.8);
+}
