@@ -1,16 +1,13 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/react-refresh'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
   build: {
-    chunkSizeWarningLimit: 1600,
-    // Це дозволить ігнорувати деякі помилки типів та перевірок
-    commonjsOptions: {
-      transformMixedEsModules: true,
-    },
+    chunkSizeWarningLimit: 2000, // ігноруємо великі файли
+    minify: false, // спрощуємо процес
+    sourcemap: false
   },
-  // Додаємо ігнорування помилок під час збірки
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' }
   }
